@@ -24,7 +24,7 @@ spend in plain English instead of Azure resource names.
 - [Architecture overview](docs/architecture-overview.md)
 - [Tagging strategy](docs/tagging-strategy.md)
 - [Cost Management Setup](docs/cost-management-setup.md)
-- Logic App workflow (in progress)
+- [Logic App workflow](/docs/logic-app-workflow.md)
 - Workbooks dashboard (in progress)
 - Weekly report function (in progress)
 
