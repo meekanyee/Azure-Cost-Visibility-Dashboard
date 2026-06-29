@@ -31,7 +31,3 @@ I set up a second view that breaks down spend by service type like Storage, Band
 ## Why this matters
 
 Most small businesses that move to Azure have no idea what is driving their bill until it arrives. These two views give anyone with Reader access to the subscription a real-time answer to what they are spending and where it is going, no Azure knowledge required.
-
-## What comes next
-
-The budget alerts are configured but not connected to anything yet. The next step is building a Logic Apps workflow that sends a formatted email notification when a threshold is crossed.
