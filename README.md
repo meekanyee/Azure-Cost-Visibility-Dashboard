@@ -25,7 +25,7 @@ spend in plain English instead of Azure resource names.
 - [Tagging strategy](docs/tagging-strategy.md)
 - [Cost Management Setup](docs/cost-management-setup.md)
 - [Logic App workflow](/docs/logic-app-workflow.md)
-- Workbooks dashboard (in progress)
+- [Workbooks dashboard](/docs/workbooks-dashboard.md)   
 - Weekly report function (in progress)
 
 ## Infrastructure
