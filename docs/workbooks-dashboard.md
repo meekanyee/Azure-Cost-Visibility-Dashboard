@@ -14,7 +14,7 @@ Put together, the Cost Management views answer "what are we spending" and this W
 
 A table query against Azure Resource Graph that lists every resource with its name, type, resource group, environment tag, project tag, and location.
 
-![Resource inventory](/images/workbook-resource-inventory.png)
+![Resource inventory](/images/workbook-resource-inventory1.png)
 
 ## Resource count panel
 
