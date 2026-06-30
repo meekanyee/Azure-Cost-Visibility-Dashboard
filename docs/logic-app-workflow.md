@@ -19,3 +19,11 @@ The Logic App uses an HTTP request trigger. When a budget alert fires in Azure C
 ## Why I used Logic Apps instead of a script
 
 Logic Apps gives you a visual workflow that anyone can read and modify without touching code. In a small business environment that matters because the person maintaining this system might not be the person who built it.
+
+## Known limitation
+
+I built an action group (`ag-cost-dashboard-alert`) intended to connect the budget's alert conditions directly to this Logic App, so the email would fire automatically the moment a threshold is crossed, no manual trigger needed.
+
+The Azure portal's budget alert UI only supports email recipients directly. It does not expose an option to attach an action group from that screen, even though action groups exist as a resource type built for this exact purpose. Wiring the two together would require calling the Consumption Budget API directly through Azure CLI or Terraform rather than the portal UI.
+
+For this project the Logic App is verified working independently (see the email screenshot above), and the action group is deployed and ready to be wired in once I have the API call configured. I'm documenting this as a known gap rather than working around it, since understanding where a tool's UI falls short is part of the job.
