@@ -41,7 +41,7 @@ manual reconciliation.
 
 ## Documentation
 
-- [Architecture overview](docs/0architecture-overview.md)
+- [Architecture overview](docs/architecture-overview.md)
 - [Tagging strategy](docs/tagging-strategy.md)
 - [Cost Management setup](docs/cost-management-setup.md)
 - [Logic App workflow](docs/logic-app-workflow.md)
