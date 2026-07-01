@@ -18,7 +18,7 @@ I built this project to fix that. It tracks and monitors Azure spending using Az
 
 ## Architecture diagram
 
-[Architecture diagram](/images/azure_cost_dashboard_architecture.png)
+<img src="/images/azure_cost_dashboard_architecture.png" width="100%" alt="Architecture diagram"/>
 
 ## Services used
 
