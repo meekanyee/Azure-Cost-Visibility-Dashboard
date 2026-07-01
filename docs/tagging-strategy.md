@@ -2,7 +2,7 @@
 
 ## Why tagging matters
 
-Without tags Cost Management only shows you spend by service type. You can see that a storage account has costs this month but you can't tell which environment it belongs to, who owns it, or which project it's for. You can't answer "how much did dev cost this month?" Tags fix that. Every resource in this project gets tagged at deploy time so I can slice spend any way I need to.
+Without tags Cost Management only shows you spend by service type. You can see that a storage account has costs this month but you can't tell which environment it belongs to, who owns it, or which project it's for. Every resource in this project gets tagged at deploy time so I can cut spend any way I need to.
 
 ## Tag schema
 

@@ -2,15 +2,15 @@
 
 ## What I built
 
-I built a Logic App called `la-cost-alert-notify` that sends an email notification when an Azure budget threshold is crossed. The goal was to make sure the right people get notified before the bill becomes a problem, not after.
+I built a Logic App called `la-cost-alert-notify` that sends an email notification when an Azure budget threshold is crossed. The goal was to make sure the right people get notified before the bill becomes a problem.
 
 ## How it works
 
-The Logic App uses an HTTP request trigger. When a budget alert fires in Azure Cost Management, it hits the Logic App endpoint and kicks off the workflow. The workflow then sends a formatted email through Office 365 with the budget name, monthly limit, and a link to the Azure portal to see the full breakdown.
+The Logic App uses an HTTP request trigger. When a budget alert fires in Azure Cost Management it hits the Logic App endpoint and kicks off the workflow. The workflow then sends a formatted email through Office 365 with the budget name, monthly limit, and a link to the Azure portal to see the full breakdown.
 
 ## Workflow diagram
 
-![Logic App Workflow](/images/logic-app-workflow.png)
+![Logic App workflow](/images/logic-app-workflow.png)
 
 ## What the email looks like
 
@@ -22,8 +22,8 @@ Logic Apps gives you a visual workflow that anyone can read and modify without t
 
 ## Known limitation
 
-I built an action group (`ag-cost-dashboard-alert`) intended to connect the budget's alert conditions directly to this Logic App, so the email would fire automatically the moment a threshold is crossed, no manual trigger needed.
+I built an action group called `ag-cost-dashboard-alert` that was supposed to connect the budget alert conditions directly to this Logic App so the email fires automatically the moment a threshold is crossed, no manual trigger needed.
 
-The Azure portal's budget alert UI only supports email recipients directly. It does not expose an option to attach an action group from that screen, even though action groups exist as a resource type built for this exact purpose. Wiring the two together would require calling the Consumption Budget API directly through Azure CLI or Terraform rather than the portal UI.
+The Azure portal's budget alert UI only supports email recipients directly. It does not give you an option to attach an action group from that screen even though action groups exist as a resource type built for exactly this purpose. Wiring the two together would require calling the Consumption Budget API directly through the Azure CLI or Terraform instead of the portal.
 
-For this project the Logic App is verified working independently (see the email screenshot above), and the action group is deployed and ready to be wired in once I have the API call configured. I'm documenting this as a known gap rather than working around it, since understanding where a tool's UI falls short is part of the job.
+The Logic App is verified working on its own as you can see in the email screenshot above. The action group is deployed and ready to be connected once I configure the API call. I documented this as a known gap instead of working around it because knowing where a tool's UI falls short is part of the job.
