@@ -2,7 +2,7 @@
 
 ## The problem
 
-I built this project after learning about a pattern that comes up constantly with business cloud environments. A company usually moves to Azure expecting lower costs than running on their own servers but a few months in the bills start climbing and there isn't an explanation why. Azure's default billing breakdown doesn't help that much because it shows line items like "Microsoft.Compute/virtualMachines" and just a dollar amount. Business owners and stake holders can't really interpret that.
+A common problem I noticed when businesses move to Azure is they expect lower costs than running their own servers. A few months in the bills start climbing and nobody can explain why. Azure's default billing breakdown doesn't help because it shows line items like "Microsoft.Compute/virtualMachines" and just a dollar amount Business owners and stakeholders can't really interpret that and don't know what to do with it.
 
 ## What I built
 
@@ -10,42 +10,34 @@ A cost tracking and alerting pipeline using Azure native services only.
 
 ## Services used
 
-Azure Cost Management
-  - Used to track and categorize spend across all the services
+**Azure Cost Management** — tracks and categorizes spend across all services in the subscription
 
-Azure Monitor
-  - Fires alerts when spend crosses $50, $100, and $200
+**Azure Monitor** — fires alerts when spend crosses $50, $100, and $200
 
-Azure Logic Apps
-  - Sends email notifications when an alert triggers
+**Azure Logic Apps** — sends email notifications automatically when an alert triggers
 
-Azure Workbooks
-  - Dashboard showing spend by service, resource group, and week
+**Azure Workbooks** — dashboard showing spend by service, resource group, and week
 
-Azure Functions
-  - Runs weekly to compare different week's costs
+**Azure Functions** — runs weekly to compare this week's costs against last week's and show where things are trending
 
-Office 365
-  - Delivers the alert and report emails
+**Office 365** — delivers the alert and report emails
 
 ## How it all connects
 
-1. Cost management tracks spend continuously across the subscription
-2. A budget is set with percentage-based thresholds
-3. Monitor alerts rules fire when spend hits $50, $100, or $200
+1. Cost Management tracks spend continuously across the subscription
+2. A budget is set with percentage based thresholds
+3. Monitor alert rules fire when spend hits $50, $100, or $200
 4. Each alert kicks off a Logic Apps workflow
-5. Logic Apps sends an email to whoever needs to know, with the spend details included.
+5. Logic Apps sends an email to whoever needs to know with the spend details included
 6. Workbooks pulls from Cost Management to render a live dashboard
-7. A timer-triggered Azure Function runs every week and emails a comparison report showing what changed and where costs are trending
-
+7. A timer triggered Azure Function runs every week and sends a comparison report showing what changed and where costs are trending
 
 ## Decisions
 
-I chose Logic Apps over custom code because it makes the workflow readable and editable for whoever takes over the system. Logic Apps also gives you a visual designer that someone who isn't technical can follow and change without breaking anything.
+I used Logic Apps instead of writing custom code because it makes the workflow readable and editable for whoever takes over the system. It gives you a visual designer that a non technical person can follow and change without breaking anything.
 
-I chose Workbooks over Power BI because it's in the Azure portal, costs nothings extra, and anyone with Reader access to the subscription can see them. With Power BI you'd have to add licensing cost and a seperate login.
-
+I used Workbooks instead of Power BI because it lives inside the Azure portal, costs nothing extra, and anyone with Reader access can see it. Power BI adds licensing cost and a separate login for a problem that doesn't need it.
 
 ## Diagram
 
-*I'll add a diagram after I complete the build.*
+<img src="/images/azure_cost_dashboard_architecture.png" width="100%" alt="Architecture diagram"/>
